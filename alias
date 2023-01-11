@@ -1,0 +1,3 @@
+# Alias
+alias ra='ranger --choosedir=$HOME/.rangerdir; LASTDIR=`cat $HOME/.rangerdir`; cd "$LASTDIR"'
+alias ls='ls --color=auto'

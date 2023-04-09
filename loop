@@ -2,11 +2,14 @@
 # This is a startup script used to execute other scripts.
 ###
 
-path="/home/im-magic/repos/bash_shell/"
+INITAL_DIR=$(pwd)
+CURRENT_PATH="$(cd "$( dirname "${BASH_SOURCE[0]}")" &> /dev/null && pwd)"
+cd "$INITAL_DIR"
+
 pending_bash_script="proxy github alias"
 
 for scripts in $pending_bash_script; do
-    script="${path}${scripts}"
+    script="${CURRENT_PATH}/${scripts}"
 
     if [[ -f $script ]]; then
         source "${script}"
